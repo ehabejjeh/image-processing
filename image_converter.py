@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageFilter
 from pathlib import Path
 
 
@@ -20,3 +20,12 @@ def grey_image():
         if not Path("greyImages").exists():
             Path("greyImages").mkdir(parents=True, exist_ok=True)
         img.save("greyImages/" + filename.name)
+
+
+def contour_image():
+    for filename in Path("jpgImages").iterdir():
+        img = Image.open(filename)
+        img = img.filter(ImageFilter.CONTOUR)
+        if not Path("contourImages").exists():
+            Path("contourImages").mkdir(parents=True, exist_ok=True)
+        img.save("contourImages/" + filename.name)
