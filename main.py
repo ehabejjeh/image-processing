@@ -1,6 +1,6 @@
-from image_converter import png_to_jpg, grey_image
-
+import image_converter
 
 if __name__ == '__main__':
-    png_to_jpg()
-    grey_image()
+    image_converter.contour_image()
+    image_converter.grey_image()
+    image_converter.contour_image()
