@@ -11,3 +11,12 @@ def png_to_jpg():
                 Path("pngImages").mkdir(parents=True, exist_ok=True)
             img = Image.open(filename)
             img.save("pngImages/" + new_filename.name, "PNG")
+
+
+def grey_image():
+    for filename in Path("jpgImages").iterdir():
+        img = Image.open(filename)
+        img = img.convert("L")
+        if not Path("greyImages").exists():
+            Path("greyImages").mkdir(parents=True, exist_ok=True)
+            img.save("greyImages/" + filename.name)
