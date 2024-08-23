@@ -19,4 +19,4 @@ def grey_image():
         img = img.convert("L")
         if not Path("greyImages").exists():
             Path("greyImages").mkdir(parents=True, exist_ok=True)
-            img.save("greyImages/" + filename.name)
+        img.save("greyImages/" + filename.name)
